@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunksrc=self.webpackChunksrc||[]).push([[781],{9781:function(e,t,s){s.r(t);var r=s(184);t.default=function(e){return(0,r.jsx)("iframe",{title:"my-resume",width:"100%",height:"100%",src:"https://docs.google.com/document/d/e/2PACX-1vRsa1RinEjGm7CWBBekUxs_ZAbE9pqNYllGtJ-7_VHrOyZ3z2JOvM9EWT4F83RTkM-k6ll__QgHdBLl/pub?embedded=true"})}}}]);
+//# sourceMappingURL=781.71e5fe45.chunk.js.map
