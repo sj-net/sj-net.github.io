@@ -1,0 +1,189 @@
+@import 'bootstrap/scss/bootstrap.scss';
+
+
+html {
+  height: 100vh;
+  overflow: hidden;
+}
+
+
+
+body {
+  height: calc(100vh - 20px);
+  background-color: rgb(45, 45, 45);
+  padding: 10px;
+  overflow: hidden;
+  color: rgb(231, 233, 235)
+}
+
+#root {
+  height: calc(100vh - 20px);
+}
+
+.doc_root {
+  height: calc(100vh - 80px);
+}
+
+.page-header {
+  color: #fff;
+  text-align: center;
+  background-color: #159957;
+  background-image: linear-gradient(120deg, #155799, #159957);
+}
+
+
+/* ============ desktop view ============ */
+@media all and (min-width: 992px) {
+
+  .doc_root {
+    width: 100%;
+    display: flex;
+  }
+
+  .sidebar {
+    width: 15%;
+  }
+
+  .doc-body {
+    width: 85%;
+  }
+
+  .sidebar li {
+    position: relative;
+    background-image: linear-gradient(180deg, #15ecda, rgba(30, 194, 117));
+  }
+
+  .sidebar li .submenu {
+    display: none;
+    background-image: linear-gradient(120deg, #15ecda, rgb(30, 194, 117));
+    padding: 0rem 0;
+    position: absolute;
+    left: 100%;
+    top: 0px;
+    min-width: 240px;
+  }
+
+  .sidebar li:hover {
+    background-image: linear-gradient(120deg, rgb(255, 188, 2), #15ecda);
+  }
+
+  .sidebar li:hover>.submenu {
+    display: block;
+  }
+}
+
+/* ============ desktop view .end// ============ */
+
+/* ============ small devices ============ */
+@media (max-width: 991px) {
+
+  .sidebar .submenu,
+  .sidebar .dropdown-menu {
+    position: static !important;
+    margin-left: 0.7rem;
+    margin-right: 0.7rem;
+    margin-bottom: .5rem;
+  }
+
+}
+
+.navbar-brand {
+  font-size: 30px;
+}
+
+.nav-link {
+  font-size: 18px;
+}
+
+
+
+.btn-clipboard {
+  z-index: 10;
+  display: block;
+  color: var(--bs-gray-0);
+  background-color: var(--bs-gray-dark);
+  border: 0;
+  border-radius: 3px;;
+}
+
+/* ============ small devices .end// ============ */
+
+.markdown {
+  padding: 10px;
+  height: calc(100vh - 80px);
+  overflow: auto;
+  border-left: 1px rgb(255, 255, 255) solid;
+  border-right: 1px rgb(255, 255, 255) solid;
+
+  h1 {
+    @extend .h1
+  }
+
+  h2 {
+    @extend .h2
+  }
+
+  h3 {
+    @extend .h3
+  }
+
+  h4 {
+    @extend .h4
+  }
+
+  h5 {
+    @extend .h5
+  }
+
+  h6 {
+    @extend .h6
+  }
+
+  hr {
+    border: 0;
+    color: rgb(74, 78, 81);
+    background-color: #fafafa;
+    height: 3.5px;
+    margin-bottom: 16.5px;
+  }
+
+  .highlight-toolbar {
+    background-color: #444;
+    color: rgb(197, 200, 198);
+  }
+
+  a {
+    color: rgb(50, 141, 210);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  pre {
+    font-family: ui-monospace, "Cascadia Mono", "Segoe UI Mono", "Liberation Mono", "Menlo", "Monaco", "Consolas", "monospace";
+    display: block;
+    margin: 0;
+    overflow: auto;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #fff;
+    white-space: pre;
+    background-color: #1c1b1b;
+    padding: 10px;
+    border-radius: 2px;
+  }
+
+  .code-inline {
+    padding: 4px 2px;
+    margin: 5px;
+    background-color: #1c1b1b;
+    border-radius: 4px;
+    display: flex;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+  }
+
+}
