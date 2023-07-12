@@ -16,12 +16,12 @@ function clean(obj) {
 
 gulp.task('default', function (done) {
     // options is optional
-    glob("public/docs/**/*.md", function (er, files) {
+    glob("docs/**/*.md", function (er, files) {
         let result = [];
         let level = { result };
 
         files.forEach(path => {
-            path = path.replace('public/docs/', '');
+            path = path.replace('docs/', '');
             let tags = [];
             path.split('/').reduce((dir, subDir, i, a) => {
                 if (!dir[subDir]) {
@@ -66,7 +66,7 @@ gulp.task('pages', function (done) {
         branch: 'gh-pages',
         history: false,
         message: `Auto-generated commit. Time - ${new Date().toLocaleString() }`,
-        repo: 'https://github.com/sj-net/sj-net.github.io.git'
+        repo: 'https://github.com/sj-net/sj-net.github.io'
     }, (err) => {
         console.log(err);
         console.log(JSON.stringify(err));
