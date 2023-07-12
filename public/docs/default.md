@@ -25,13 +25,7 @@ S - exclude system attributes
 H - exlude hidden attribute
 
 
-### Nuget
----
 
-For pushing a package to private nuget feed.
-
-
-`dotnet nuget push --source "<nuget url?" --api-key az <package path> --interactive`
 
 
 ### Powershell

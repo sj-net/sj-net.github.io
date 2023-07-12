@@ -47,3 +47,8 @@
 5. Remove the pen drive and change the boot order to Windows Boot Manager. 
 
 [Stack Overflow Reference](https://superuser.com/a/1170879/551075)
+
+### Domain Controller Not reacing issue
+
+1. Use `nltest` command
+2. `nltest /sc_verify:domain_full_name`
