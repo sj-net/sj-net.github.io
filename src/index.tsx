@@ -62,6 +62,10 @@ root.render(
               path='/docs'
               element={<Docs />}
             />
+             <Route
+              path='*'
+              element={<Docs />}
+            />
           </Routes>
         </Suspense>
       </BrowserRouter>
