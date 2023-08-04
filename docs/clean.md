@@ -1,5 +1,5 @@
 
-#### Clean SQL log File.
+### Clean SQL log File.
 
 ```sql
 
@@ -22,3 +22,7 @@ select name, log_reuse_wait_desc from sys.databases
 ```
 
 Note: Sometimes the log file name might be different. So check them in the first query result.
+
+### Clean bin/obj/packages folders
+
+1. `Get-ChildItem .\ -include bin,obj,packages -Recurse | ForEach-Object ($_) { Remove-Item $_.FullName -Force -Recurse }`

@@ -24,6 +24,7 @@ robocopy 'src\' 'dest\' /A-:SH
 S - exclude system attributes    
 H - exlude hidden attribute
 
+Note: use `/MIR` with caution. it removes the destination files if they don't exist in source.
 
 
 
@@ -69,3 +70,6 @@ robocopy $dirPath $destFolder /A-:SH
 invoke-command -computername $targetServer -scriptblock {Start-IISSite -Name $using:siteName } -Credential $cred 
 
 ```
+
+### Teams login hint
+`https://teams.microsoft.com/?tenantId=<tenant id>&login_hint=your.em@il.com`

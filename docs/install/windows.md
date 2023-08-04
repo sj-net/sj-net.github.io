@@ -52,3 +52,7 @@
 
 1. Use `nltest` command
 2. `nltest /sc_verify:domain_full_name`
+
+### __
+
+1. `wmic path softwarelicensingservice get OA3xOriginalProductKey`
