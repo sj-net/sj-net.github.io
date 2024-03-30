@@ -119,8 +119,10 @@ nav_sort: case_insensitive # Capital letters sorted before lowercase
 nav_external_links:
   - title: Stack Overflow
     url: https://stackoverflow.com/users/3465753/j-santosh
+    opens_in_new_tab: true 
   - title: Resume
     url: https://docs.google.com/document/d/e/2PACX-1vRsa1RinEjGm7CWBBekUxs_ZAbE9pqNYllGtJ-7_VHrOyZ3z2JOvM9EWT4F83RTkM-k6ll__QgHdBLl/pub
+    opens_in_new_tab: true 
 
 liquid:
    error_mode: strict
