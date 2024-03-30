@@ -16,8 +16,8 @@
 title: Santosh J
 description: Associate Architect in .NET
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://just-the-docs.com" # the base hostname & protocol for your site, e.g. http://example.com
-repository: just-the-docs/just-the-docs # for github-metadata
+url: "https://sj-net.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
+repository: sj-net/sj-net.github.io # for github-metadata
 theme: just-the-docs
 permalink: pretty
 
