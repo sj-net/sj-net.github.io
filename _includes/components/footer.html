@@ -30,6 +30,22 @@
         {% endif %}
       </div>
     {% endif %}
-    <p class="highlight ">Built at {{site.time}}</span>
+    <h class="">Built at {{site.time}}</h>
+    <span class="fs-3">
+      <button class="btn js-toggle-dark-mode">Go Light</button>
+    </span>
+<script>
+const toggleDarkMode = document.querySelector('.js-toggle-dark-mode');
+
+jtd.addEvent(toggleDarkMode, 'click', function(){
+  if (jtd.getTheme() === 'dark') {
+    jtd.setTheme('light');
+    toggleDarkMode.textContent = 'Go Dark';
+  } else {
+    jtd.setTheme('dark');
+    toggleDarkMode.textContent = 'Go Light';
+  }
+});
+</script>
   </footer>
 {% endif %}

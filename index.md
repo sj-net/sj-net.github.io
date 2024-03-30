@@ -5,6 +5,14 @@ nav_order: 1
 description: "My personal blog"
 permalink: /
 ---
+<!-- 
+## Table of contents
+{: .no_toc .text-delta }
 
-# {{ description }}
-{: .fs-9 }
+1. TOC
+{:toc}
+2. SJ
+
+--- -->
+
+## Loving .NET 8
