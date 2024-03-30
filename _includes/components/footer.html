@@ -30,7 +30,8 @@
         {% endif %}
       </div>
     {% endif %}
-    <h class="">Built at {{site.time}}</h>
+
+    <p class="text-small text-grey-dk-000 mb-0 mr-2"> Site deployed at: <span class="d-inline-block">{{site.time| date: site.last_edit_time_format}}</span>.</p>
     <span class="fs-3">
       <button class="btn js-toggle-dark-mode">Go Light</button>
     </span>
