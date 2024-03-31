@@ -18,6 +18,8 @@ description: Associate Architect in .NET
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://sj-net.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
 repository: sj-net/sj-net.github.io # for github-metadata
+# Color scheme currently only supports "dark", "light"/nil (default), or a custom scheme that you define
+color_scheme: nil
 theme: just-the-docs
 permalink: pretty
 
@@ -139,7 +141,7 @@ footer_content: ""
 
 # Footer last edited timestamp
 last_edit_timestamp: true # show or hide edit time - page must have `last_modified_date` defined in the frontmatter
-last_edit_time_format: "%b %e %Y at %I:%M %p" # uses ruby's time format: https://ruby-doc.org/stdlib-2.7.0/libdoc/time/rdoc/Time.html
+last_edit_time_format: "%d-%b-%Y %I:%M %p" # uses ruby's time format: https://ruby-doc.org/stdlib-2.7.0/libdoc/time/rdoc/Time.html
 
 
 
@@ -151,8 +153,6 @@ gh_edit_branch: "main" # the branch that your docs is served from
 # gh_edit_source: docs # the source that your files originate from
 gh_edit_view_mode: "tree" # "tree" or "edit" if you want the user to jump into the editor immediately
 
-# Color scheme currently only supports "dark", "light"/nil (default), or a custom scheme that you define
-color_scheme: nil
 
 callouts_level: quiet # or loud
 callouts:

@@ -14,9 +14,12 @@
       <div class="d-flex mt-2">
         {% if site.last_edit_timestamp and site.last_edit_time_format and page.last_modified_date %}
           <p class="text-small text-grey-dk-000 mb-0 mr-2">
-            Page last modified: <span class="d-inline-block">{{ page.last_modified_date | date: site.last_edit_time_format }}</span>.
+            Page last modified at: <span class="d-inline-block">{{ page.last_modified_date | date: site.last_edit_time_format }}</span>.
           </p>
         {% endif %}
+        <p class="text-small text-grey-dk-000 mb-0 mr-2"> Site deployed at: <span class="d-inline-block">{{site.time| date: site.last_edit_time_format}}</span>.</p>
+      </div>
+      <div class="d-flex mt-2">
         {% if
           site.gh_edit_link and
           site.gh_edit_link_text and
@@ -28,13 +31,13 @@
             <a href="{{ site.gh_edit_repository }}/{{ site.gh_edit_view_mode }}/{{ site.gh_edit_branch }}{% if site.gh_edit_source %}/{{ site.gh_edit_source }}{% endif %}{% if page.collection and site.collections_dir %}/{{ site.collections_dir }}{% endif %}/{{ page.path }}" id="edit-this-page">{{ site.gh_edit_link_text }}</a>
           </p>
         {% endif %}
+        <p class="text-small text-grey-dk-000 mb-0 ml-2">
+          <a href="javascript:void(0)" class="js-toggle-dark-mode">Go Dark</button>
+        </p>
       </div>
     {% endif %}
 
-    <p class="text-small text-grey-dk-000 mb-0 mr-2"> Site deployed at: <span class="d-inline-block">{{site.time| date: site.last_edit_time_format}}</span>.</p>
-    <span class="fs-3">
-      <button class="btn js-toggle-dark-mode">Go Light</button>
-    </span>
+   
 <script>
 const toggleDarkMode = document.querySelector('.js-toggle-dark-mode');
 
