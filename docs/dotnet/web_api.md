@@ -21,9 +21,7 @@ endpoints.MapGet("/api/debug/routes", (IEnumerable<EndpointDataSource> endpointS
         if (index >= 0)
             r.Add(item.Substring(0, index)); // or index + 1 to keep slash
         else
-        {
             r.Add(item);
-        }
     }
     return string.Join("\r\n", r);
 });
