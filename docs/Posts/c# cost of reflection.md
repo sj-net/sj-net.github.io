@@ -109,5 +109,10 @@ public class Bar : Foo, IObject
 
 The benchmarks have proven that this simple interfacec is able to save me at least 80% of the performance cost.
 
-[Benchmark Report](https://github.com/sj-net/DotNet.Benchmarks/blob/main/Results/Dotnet.Benchmarks.CostOfReflection-report-github.md)
+## Benchmarks
+<p class="note">
+<pre>
+{% include_relative Dotnet.Benchmarks.CostOfReflection-report.md %}
+</pre>
+</p>
 [Source Code](https://github.com/sj-net/DotNet.Benchmarks/tree/main/Dotnet.Benchmarks)
