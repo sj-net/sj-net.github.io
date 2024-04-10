@@ -90,7 +90,7 @@ enable_copy_code_button: true
 mermaid:
   # Version of mermaid library
   # Pick an available version from https://cdn.jsdelivr.net/npm/mermaid/
-  version: "9.1.6"
+  version: "10.9.0"
   # Put any additional configuration, such as setting the theme, in _includes/mermaid_config.js
   # See also docs/ui-components/code
   # To load mermaid from a local library, also use the `path` key to specify the location of the library; e.g.
@@ -122,8 +122,11 @@ nav_external_links:
   - title: Stack Overflow
     url: https://stackoverflow.com/users/3465753/j-santosh
     opens_in_new_tab: true 
-  - title: Resume
+  - title: Resume (Web)
     url: https://docs.google.com/document/d/e/2PACX-1vRsa1RinEjGm7CWBBekUxs_ZAbE9pqNYllGtJ-7_VHrOyZ3z2JOvM9EWT4F83RTkM-k6ll__QgHdBLl/pub
+    opens_in_new_tab: true 
+  - title: Resume (PDF)
+    url: "/downloads/Santosh-Jallapuram-April-2024.pdf"
     opens_in_new_tab: true 
 
 liquid:
