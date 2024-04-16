@@ -11,6 +11,9 @@ published: true
 ``` powershell
 $temp_folder = $env:TEMP+'\'+$env:ComputerName+'\random_folder_name'
 $sln = './my-solution.sln'
+echo "Install global tools required for code coverage"
+dotnet tool update --global dotnet-reportgenerator-globaltool
+dotnet tool update --global JetBrains.dotCover.globaltool
 dotnet dotcover test  $sln -c Debug --collect "XPlat Code Coverage" --dcOutput="$temp_folder\Coverage\coverage.snapshot" --dcAttributeFilters="System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute"  --dcFilters="-:*Tests*;"
 dotnet dotCover report --source="$temp_folder\Coverage\coverage.snapshot" --output="$temp_folder\Coverage\coverage.xml" --reportType="DetailedXML"
 reportgenerator -reports:$temp_folder\Coverage\coverage.xml -targetdir:$temp_folder\Reports\ -reporttypes:"HtmlInline_AzurePipelines_Dark"
