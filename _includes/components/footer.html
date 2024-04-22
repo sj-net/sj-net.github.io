@@ -12,9 +12,9 @@
 
   {% if site.last_edit_timestamp or site.gh_edit_link %}
   <div class="d-flex mt-2">
-    {% if site.last_edit_time_format and  page.last_modified_at %}
+    {% if site.last_edit_time_format and page.last_modified_at %}
     <p class="text-small text-grey-dk-000 mb-0 mr-2">
-      Page last modified at: <span class="d-inline-block">{{  page.last_modified_at | date: site.last_edit_time_format
+      Page last modified at: <span class="d-inline-block">{{ page.last_modified_at | date: site.last_edit_time_format
         }}</span>.
     </p>
     {% endif %}
@@ -39,6 +39,8 @@
     </p>
   </div>
   {% endif %}
+  <a href="https://hits.sh/sj-net.github.io/"><img alt="Hits"
+      src="https://hits.sh/sj-net.github.io.svg?style=flat-square" /></a>
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-2SQ28SNTJD"></script>
