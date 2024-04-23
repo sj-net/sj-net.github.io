@@ -4,47 +4,57 @@
 {% if footer_custom != "" or site.last_edit_timestamp or site.gh_edit_link %}
 <hr>
 <footer>
-  {% if site.back_to_top %}
-  <p><a href="#top" id="back-to-top">{{ site.back_to_top_text }}</a></p>
-  {% endif %}
-
-  {{ footer_custom }}
-
-  {% if site.last_edit_timestamp or site.gh_edit_link %}
-  <div class="d-flex mt-2">
-    {% if site.last_edit_time_format and page.created_at %}
-    <p class="text-small text-grey-dk-000 mb-0 mr-2">
-      Page last modified at: <span class="d-inline-block">{{ page.created_at | date: site.last_edit_time_format
-        }}</span>.
-    </p>
-    {% endif %}
-    <p class="text-small text-grey-dk-000 mb-0 mr-2"> Site deployed at: <span class="d-inline-block">{{site.time| date:
-        site.last_edit_time_format}}</span>.</p>
-  </div>
-  <div class="d-flex mt-2">
-    {% if
-    site.gh_edit_link and
-    site.gh_edit_link_text and
-    site.gh_edit_repository and
-    site.gh_edit_branch and
-    site.gh_edit_view_mode
-    %}
-    <p class="text-small text-grey-dk-000 mb-0">
-      <a href="{{ site.gh_edit_repository }}/{{ site.gh_edit_view_mode }}/{{ site.gh_edit_branch }}{% if site.gh_edit_source %}/{{ site.gh_edit_source }}{% endif %}{% if page.collection and site.collections_dir %}/{{ site.collections_dir }}{% endif %}/{{ page.path }}"
-        id="edit-this-page" target="blank">{{ site.gh_edit_link_text }}</a>
-    </p>
-    {% endif %}
-    <p class="text-small text-grey-dk-000 mb-0 ml-2">
-      <a href="javascript:void(0)" class="js-toggle-dark-mode">Go Dark</button>
-    </p>
-  </div>
-  {% endif %}
-  <a href="https://hits.sh/sj-net.github.io/"><img alt="Hits"
-      src="https://hits.sh/sj-net.github.io.svg?style=flat-square" /></a>
-
+    <table>
+      <tbody>
+        {% if site.last_edit_time_format and page.created_at %}
+        <tr>
+          <td>Created At</td>
+          <td>{{ page.created_at | date: site.last_edit_time_format}}</td>
+        </tr>
+        {% endif %}
+        {% if site.last_edit_time_format and page.modified_at %}
+        <tr>
+          <td>Modified At</td>
+          <td>{{ page.modified_at | date: site.last_edit_time_format}}</td>
+        </tr>
+        {% endif %}
+        {% if site.last_edit_time_format and site.time %}
+        <tr>
+          <td>Deployed At</td>
+          <td>{{ site.time | date: site.last_edit_time_format}}</td>
+        </tr>
+        {% endif %}
+      </tbody>
+    </table>
+    <table>
+      <tbody>
+        <tr>
+          {% if site.back_to_top %}
+          <td>
+            <p><a href="#top" id="back-to-top">{{ site.back_to_top_text }}</a></p>
+          </td>
+          {% endif %}
+          {% if
+          site.gh_edit_link and
+          site.gh_edit_link_text and
+          site.gh_edit_repository and
+          site.gh_edit_branch and
+          site.gh_edit_view_mode
+          %}
+          <td>
+            <a href="{{ site.gh_edit_repository }}/{{ site.gh_edit_view_mode }}/{{ site.gh_edit_branch }}{% if site.gh_edit_source %}/{{ site.gh_edit_source }}{% endif %}{% if page.collection and site.collections_dir %}/{{ site.collections_dir }}{% endif %}/{{ page.path }}"
+              id="edit-this-page" target="blank">{{ site.gh_edit_link_text }}</a>
+          </td>
+          {% endif %}
+          <td>
+            <a href="#" id="js-toggle-dark-mode">Go Dark</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   <!-- Google tag (gtag.js) -->
   <script>
-    const toggleDarkMode = document.querySelector('.js-toggle-dark-mode');
+    const toggleDarkMode = document.querySelector('#js-toggle-dark-mode');
 
     jtd.addEvent(toggleDarkMode, 'click', function () {
       if (jtd.getTheme() === 'dark') {
