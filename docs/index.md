@@ -20,25 +20,10 @@ reportgenerator -reports:$temp_folder\Coverage\coverage.xml -targetdir:$temp_fol
 Invoke-Item $temp_folder\Reports\index.html
 ```
 
-
-### RoboCopy
----
-```powershell
-robocopy 'src\' 'dest\' /A-:SH
-```
-
-S - exclude system attributes    
-H - exlude hidden attribute
-
-Note: use `/MIR` with caution. it removes the destination files if they don't exist in source.
-
-
-
 ### Nuget
 ---
 
 For pushing a package to private nuget feed.
-
 
 ```powershell
 dotnet nuget push --source "<nuget url?" --api-key az <package path> --interactive
