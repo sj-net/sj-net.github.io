@@ -17,10 +17,8 @@ Reflection takes too much time to set or get the properties if the property info
 public interface IObject
 {
     bool SetValue(string propertyName, object value);
-
     object GetValue(string propertyName);
 }
-
 public static class IObjectExtensions
 {
     public static T GetValue<T>(this IObject obj, string propertyName)
@@ -28,7 +26,6 @@ public static class IObjectExtensions
         return (T)obj.GetValue(propertyName);
     }
 }
-
 ``` 
 
 ## Example
@@ -44,7 +41,6 @@ public class Bar : Foo, IObject
     public decimal Decimal { get; set; } = decimal.MaxValue;
     public DateTime DateTime { get; set; } = DateTime.Now;
     public DateTimeOffset DateTimeOffset { get; set; } = new DateTimeOffset(DateTime.Now);
-
     public object GetValue(string propertyName)
     {
         return propertyName switch
@@ -59,7 +55,6 @@ public class Bar : Foo, IObject
             _ => null,
         };
     }
-
     public bool SetValue(string propertyName, object value)
     {
         switch (propertyName)
@@ -94,7 +89,6 @@ public class Bar : Foo, IObject
                     DateTimeOffset = DateTimeOffset.Parse(value.ToString());
                     return true;
                 }
-
             case nameof(Guid):
                 {
                     Guid = Guid.Parse(value.ToString());
@@ -105,7 +99,6 @@ public class Bar : Foo, IObject
         }
     }
 }
-
 ```
 
 The benchmarks have proven that this simple interfacec is able to save me at least 80% of the performance cost.
