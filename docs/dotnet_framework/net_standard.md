@@ -1,5 +1,5 @@
 ---
-title: MOQ
+title: .NET Standard
 parent: .Net Framework
 layout: default
 published: true
