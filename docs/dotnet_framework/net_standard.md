@@ -11,13 +11,11 @@ grand_parent: My Docs
 
 ``` csharp
 using Microsoft.Extensions.Diagnostics.HealthChecks;
-
 namespace Microsoft.Extensions.DependencyInjection
 {
     public class SampleDatabaseHealthCheck : IHealthCheck
     {
         private readonly DBContext dbContext;
-    
         public SampleDatabaseHealthCheck(DBContext dbContext)
         {
             this.dbContext = dbContext;
