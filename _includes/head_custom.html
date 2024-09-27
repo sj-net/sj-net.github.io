@@ -1,0 +1,13 @@
+<script>
+    jtd.onReady(function () {
+        var codeBlocks = document.querySelectorAll('div.highlighter-rouge, div.listingblock > div.content, figure.highlight');
+        codeBlocks.forEach(codeBlock => {
+            var language = codeBlock.classList[0].split('-')[1];
+            var codeLabel = document.createElement('small');
+            codeLabel.classList.add("code-label");
+            codeLabel.classList.add(`language-${language}`);
+            codeLabel.innerHTML = language;
+            codeBlock.append(codeLabel);
+        });
+    });
+</script>
