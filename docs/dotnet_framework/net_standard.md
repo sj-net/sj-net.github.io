@@ -56,9 +56,3 @@ namespace Microsoft.Extensions.DependencyInjection
     }
 }
 ```
-
-### A sample health check
-
-```csharp
-
-```
