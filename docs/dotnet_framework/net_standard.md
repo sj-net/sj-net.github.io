@@ -9,7 +9,7 @@ grand_parent: My Docs
 ### How to add HealthChecks to .Net Framework
 ---
 
-``` csharp
+``` c#
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 namespace Microsoft.Extensions.DependencyInjection
 {

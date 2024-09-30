@@ -11,7 +11,7 @@ grand_parent: My Docs
 
 - We need to set the Controller Context for the controller under test. From that the HTTPContext is pulled. 
 
-```csharp
+```c#
  public static ControllerContext GetControllerContext(Controller controller)
  {
      var mockHttpContext = new Mock<HttpContextBase>();

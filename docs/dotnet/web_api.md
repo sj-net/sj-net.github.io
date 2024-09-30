@@ -8,7 +8,7 @@ grand_parent: My Docs
 
 ### Return all routes in the Web API. 
 
-``` csharp
+``` c#
 endpoints.MapGet("/api/debug/routes", (IEnumerable<EndpointDataSource> endpointSources) =>
 {
     var t = endpointSources.SelectMany(_ => _.Endpoints)
