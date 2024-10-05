@@ -1,5 +1,5 @@
 ---
-title: MOQ
+title: MoQ
 parent: Testing
 layout: default
 published: true

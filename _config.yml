@@ -87,10 +87,10 @@ search:
 enable_copy_code_button: true
 
 # By default, consuming the theme as a gem leaves mermaid disabled; it is opt-in
-mermaid:
+#mermaid:
   # Version of mermaid library
   # Pick an available version from https://cdn.jsdelivr.net/npm/mermaid/
-  version: "10.9.0"
+  #version: "10.9.0"
   # Put any additional configuration, such as setting the theme, in _includes/mermaid_config.js
   # See also docs/ui-components/code
   # To load mermaid from a local library, also use the `path` key to specify the location of the library; e.g.

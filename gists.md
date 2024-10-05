@@ -14,6 +14,10 @@ permalink: /gists
     git cherry-pick <commit sha>
 ```
 
+``` powershell
+    git rebase origin/master
+```
+
 ### RoboCopy
 ---
 ```powershell
