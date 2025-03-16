@@ -1,5 +1,5 @@
 ---
-title: Avoid of Reflection in C#
+title: "C# : How to avoid reflection ?"
 layout: post
 published: true
 parent: My Blog
