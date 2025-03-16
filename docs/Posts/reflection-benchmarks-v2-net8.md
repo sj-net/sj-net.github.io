@@ -1,10 +1,12 @@
+```
 BenchmarkDotNet v0.14.0, Windows 11 (10.0.26100.3476)
 Unknown processor
 .NET SDK 9.0.201
   [Host]   : .NET 8.0.13 (8.0.1325.6609), X64 RyuJIT AVX2
   .NET 8.0 : .NET 8.0.13 (8.0.1325.6609), X64 RyuJIT AVX2
 
-Job=.NET 8.0  Runtime=.NET 8.0  
+Job=.NET 8.0  Runtime=.NET 8.0
+```
 
 | Method                     | Categories   | Mean       | Error     | StdDev    | Median     | Ratio | MannWhitney(10%) | RatioSD | Baseline | Gen0   | Allocated | Alloc Ratio |
 |--------------------------- |------------- |-----------:|----------:|----------:|-----------:|------:|----------------- |--------:|--------- |-------:|----------:|------------:|

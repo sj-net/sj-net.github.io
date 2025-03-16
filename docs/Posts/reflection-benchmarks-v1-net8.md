@@ -1,10 +1,12 @@
+```
 BenchmarkDotNet v0.13.12, Windows 11 (10.0.22631.3235/23H2/2023Update/SunValley3)
 13th Gen Intel Core i7-13620H, 1 CPU, 16 logical and 10 physical cores
 .NET SDK 8.0.200
   [Host]   : .NET 8.0.2 (8.0.224.6711), X64 RyuJIT AVX2
   .NET 8.0 : .NET 8.0.2 (8.0.224.6711), X64 RyuJIT AVX2
 
-Job=.NET 8.0  Runtime=.NET 8.0  
+Job=.NET 8.0  Runtime=.NET 8.0
+```
 
 
 | Method                  | Categories   | Mean      | Error     | StdDev    | Ratio | MannWhitney(10%) | Baseline |
