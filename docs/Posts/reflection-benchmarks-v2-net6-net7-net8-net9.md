@@ -1,5 +1,3 @@
-```
-
 BenchmarkDotNet v0.14.0, Windows 11 (10.0.26100.3476)
 Unknown processor
 .NET SDK 9.0.201
@@ -10,7 +8,6 @@ Unknown processor
   .NET 9.0 : .NET 9.0.3 (9.0.325.11113), X64 RyuJIT AVX2
 
 
-```
 | Method                     | Job      | Runtime  | Categories   | Mean       | Error     | StdDev    | Median     | Ratio | MannWhitney(10%) | RatioSD | Baseline | Gen0   | Gen1   | Allocated | Alloc Ratio |
 |--------------------------- |--------- |--------- |------------- |-----------:|----------:|----------:|-----------:|------:|----------------- |--------:|--------- |-------:|-------:|----------:|------------:|
 | No_Reflection_Get_DateTime | .NET 6.0 | .NET 6.0 | get_DateTime |  3.4865 ns | 0.2031 ns | 0.5988 ns |  3.5003 ns |  0.10 | Faster           |    0.02 | No       | 0.0019 |      - |      24 B |        1.00 |

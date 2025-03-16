@@ -1,5 +1,3 @@
-
-
 BenchmarkDotNet v0.13.12, Windows 11 (10.0.22631.3235/23H2/2023Update/SunValley3)
 13th Gen Intel Core i7-13620H, 1 CPU, 16 logical and 10 physical cores
 .NET SDK 8.0.200

@@ -1,5 +1,3 @@
-```
-
 BenchmarkDotNet v0.14.0, Windows 11 (10.0.26100.3476)
 Unknown processor
 .NET SDK 9.0.201
@@ -8,7 +6,6 @@ Unknown processor
 
 Job=.NET 8.0  Runtime=.NET 8.0  
 
-```
 | Method                     | Categories   | Mean       | Error     | StdDev    | Median     | Ratio | MannWhitney(10%) | RatioSD | Baseline | Gen0   | Allocated | Alloc Ratio |
 |--------------------------- |------------- |-----------:|----------:|----------:|-----------:|------:|----------------- |--------:|--------- |-------:|----------:|------------:|
 | No_Reflection_Get_DateTime | get_DateTime |  3.1952 ns | 0.1054 ns | 0.2832 ns |  3.1038 ns |  0.18 | Faster           |    0.02 | No       | 0.0019 |      24 B |        1.00 |
