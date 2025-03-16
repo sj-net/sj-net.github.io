@@ -22,7 +22,7 @@ public interface IObject
 {
     bool SetValue(string propertyName, object value);
     object GetValue(string propertyName);
-    T GetValue<T>(string propertyName); // I skipped the implementation of this in this post. Please find that in source code. 
+    T GetValue<T>(string propertyName); // I skipped the implementation of this in this post. Please find that in source code. 
 }
 ```
 
