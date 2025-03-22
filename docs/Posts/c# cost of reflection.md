@@ -159,3 +159,5 @@ For some scenarios, V1 and V2 are better than V3. But ultimately V1, V2, V3 are 
 
 
 This is one of my best performance improvements I have ever done. This might not be significant in many places  but for situations like mine, this saves a lot of time during run time.
+
+All different variations used for benchmarks are [here](https://github.com/DotNetExtended/Default/blob/main/src/DotNetExtended.NoReflection.Tests/ReflectionBenchmarkModels.cs)
