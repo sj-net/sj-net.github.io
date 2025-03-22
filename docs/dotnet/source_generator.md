@@ -12,18 +12,21 @@ published: true
 
 1. Create a blank solution 
 2. Create a class libary in .Net Standard 2.0. Ex: `PrivateFieldGenerator.csproj`
-3. Update the `csproj` file with below things. 
+3. Update the `csproj` file with below things.     
+4. 
 ```xml
 <LangVersion>latest</LangVersion>
 <EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
 <CompilerGeneratedFilesOutputPath>Generated</CompilerGeneratedFilesOutputPath>
 <IsRoslynComponent>true</IsRoslynComponent>
 <EnforceExtendedAnalyzerRules>true</EnforceExtendedAnalyzerRules>
-```
-4. Install `Microsoft.CodeAnalysis.CSharp` & `Microsoft.CodeAnalysis.Analyzers`
-5. Add a class file and name is `PrivateFieldIncrementalGenerator`. We will be using the `IIncrementalGenerator`
-6. Decorate the class with the `[GeneratorAttribute]`
-7. Implement the class like below  
+```    
+
+5. Install `Microsoft.CodeAnalysis.CSharp` & `Microsoft.CodeAnalysis.Analyzers`
+6. Add a class file and name is `PrivateFieldIncrementalGenerator`. We will be using the `IIncrementalGenerator`
+7. Decorate the class with the `[GeneratorAttribute]`
+8. Implement the class like below      
+9. 
 ```c#
 public class PrivateFieldGenerator : IIncrementalGenerator
 {
@@ -142,7 +145,7 @@ public class PrivateFieldGenerator : IIncrementalGenerator
     }
 }
 ```
-8. Done you are ready with your generator. 
+9. Done you are ready with your generator. 
 
 #### How to use this generator in your real project. 
 
