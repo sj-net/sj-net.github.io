@@ -6,15 +6,15 @@ grand_parent: My Docs
 published: true
 ---
 
-### Source Generators in .Net Standard 2.0
+## Source Generators in .Net Standard 2.0
 
-#### How to write one ? 
+### How to write one ? 
 
-1. Create a blank solution 
-2. Create a class libary in .Net Standard 2.0. Ex: `PrivateFieldGenerator.csproj`
-3. Update the `csproj` file with below things.     
-4. 
-```xml
+- Create a blank solution 
+- Create a class libary in .Net Standard 2.0. Ex: `PrivateFieldGenerator.csproj`
+- Update the `csproj` file with below things.     
+
+```xml 
 <LangVersion>latest</LangVersion>
 <EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
 <CompilerGeneratedFilesOutputPath>Generated</CompilerGeneratedFilesOutputPath>
@@ -22,11 +22,11 @@ published: true
 <EnforceExtendedAnalyzerRules>true</EnforceExtendedAnalyzerRules>
 ```    
 
-5. Install `Microsoft.CodeAnalysis.CSharp` & `Microsoft.CodeAnalysis.Analyzers`
-6. Add a class file and name is `PrivateFieldIncrementalGenerator`. We will be using the `IIncrementalGenerator`
-7. Decorate the class with the `[GeneratorAttribute]`
-8. Implement the class like below      
-9. 
+- Install `Microsoft.CodeAnalysis.CSharp` & `Microsoft.CodeAnalysis.Analyzers`
+- Add a class file and name is `PrivateFieldIncrementalGenerator`. We will be using the `IIncrementalGenerator`
+- Decorate the class with the `[GeneratorAttribute]`
+- Implement the class like below      
+
 ```c#
 public class PrivateFieldGenerator : IIncrementalGenerator
 {
@@ -145,9 +145,9 @@ public class PrivateFieldGenerator : IIncrementalGenerator
     }
 }
 ```
-9. Done you are ready with your generator. 
+- Done you are ready with your generator. 
 
-#### How to use this generator in your real project. 
+### How to use this generator in your real project. 
 
 1. In this case, I am taking a class library to create a nuget but you can shoose a API or MVC or a WPF project too. 
 2. What ever project you choose add below line to that `csproj` where you want this generator to work. 
@@ -159,7 +159,7 @@ public class PrivateFieldGenerator : IIncrementalGenerator
 ```
 
 
-#### How to Debug ? 
+### How to Debug ? 
 
 I learnt from [here](https://github.com/JoanComasFdz/dotnet-how-to-debug-source-generator-vs2022)
 
@@ -167,10 +167,10 @@ I learnt from [here](https://github.com/JoanComasFdz/dotnet-how-to-debug-source-
 ```json
 {
   "profiles": {
-    "Name of your generator": {
-      "commandName": "DebugRoslynComponent",
-      "targetProject": "path to .csproj file"
-    }
+        "Name of your generator": {
+           "commandName": "DebugRoslynComponent",
+           "targetProject": "path to .csproj file"
+        }
   }
 }
 ```

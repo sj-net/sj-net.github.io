@@ -16,3 +16,6 @@ Use github actions for deploying the site.
 
 Notes(For my self)
 `git push -u --force origin main`
+
+
+--Update the gems and lock file - `bundle update --bundler`

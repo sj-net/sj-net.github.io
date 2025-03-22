@@ -67,11 +67,6 @@ public class FooV1 : IObject
 
 When I did the benchmarks for setting a value using reflection, I saw using an interface brought down the time taken to set a property to a min of 70% and max of 91%.
 
-### Here are the V1 Benchmarks: 
-{% include_relative reflection-benchmarks-v1-net8.md %}
-[V1 Source Code](https://github.com/sj-net/DotNet.Benchmarks/tree/main/Dotnet.Benchmarks)
-
-
 As this worked out very well, and I had too many model's so I built our own source generator using a console app as I was using .NET6 where the source generators are still experimental. And this whole implementation brought down our app launch time from 60+ seconds to less than 20 seconds. Btw, the properties inside the Model used to change very rarely. So when they did, we used to run the generator again and copy the files. And we ensure these generated files should never be changed manually and named them something like Foo.g.cs which helps me review the PR's easily from the team. And ofcourse, I wrote an API to return the properties and their metadata in the way that I need so that my generator can generate the classes for me. 
 
 ## Version 2: (Update on  16th March 2025)
@@ -81,30 +76,16 @@ Uses `ReadOnlySpan<char>` but same like V3.
 
 I read in multiple blogs that .NET invested a lot in performance improvement using ReadOnlySpan over the years. I was wondering if we can still make this better. So I tried again with ChatGPT help. Now compared to V1, V2 had at least 40% improvement over V1. 
 
-I renamed the interface like 
-
-```csharp
- public interface IObject
- {
-    bool SetValue(string propertyName, object value);
-    object GetValue(string propertyName);
-    T GetValue<T>(string propertyName); // I skipped the implementation of this in this post. Please find that in source code.
- }
-```
-
 Nothing changed in my interface. But the implementation changed a bit.
 
 ```csharp
-[DynamicIObject]
-public partial class Foo
+public class Foo : IObject
 {
     public int Integer { get; set; } = int.MaxValue;
     public string String { get; set; } = "some random string";
 
 }
 ```
-
-Notice the `DynamicIObject` on top of class. And yes this time I used Incremental Source Generators as they are stable.
 
 And my implementation is like 
 
@@ -140,7 +121,9 @@ public object GetValue(string propertyName)
 
 As I said, I took ChatGPT help, I am not 100% sure how `MethodImpl` helps.
 
-### Here are the benchmarks
+Major benefits I saw are switch case speed was improved by 20% at least when I was checking the lenhth of the property name first.
+
+### Here are the benchmarks ([Source Models]([here](https://github.com/DotNetExtended/Default/blob/main/src/DotNetExtended.NoReflection.Tests/ReflectionBenchmarkModels.cs)))
 
 1. Reflection_Without_Cache
 2. Reflection_With_Cache
@@ -153,11 +136,12 @@ For some scenarios, V1 and V2 are better than V3. But ultimately V1, V2, V3 are 
 
 .NET 8 only.   
 {% include_relative reflection-benchmarks-v1-v2-v3-net8.md %}
-[Source Code](https://github.com/DotNetExtended/Default/tree/main/src/DotNetExtended.NoReflection)
-[Benchmarks Source Code](https://github.com/DotNetExtended/Default/tree/main/src/DotNetExtended.NoReflection.Tests)
-[Source Generator](https://github.com/DotNetExtended/Default/tree/main/src/DotNetExtended.NoReflection.SourceGenerators)
+- [Source Code](https://github.com/DotNetExtended/Default/tree/main/src/DotNetExtended.NoReflection)    
+- [Benchmarks Source Code](https://github.com/DotNetExtended/Default/tree/main/src/DotNetExtended.NoReflection.Tests)    
+- [Source Generator](https://github.com/DotNetExtended/Default/tree/main/src/DotNetExtended.NoReflection.SourceGenerators)    
 
 
 This is one of my best performance improvements I have ever done. This might not be significant in many places  but for situations like mine, this saves a lot of time during run time.
 
-All different variations used for benchmarks are [here](https://github.com/DotNetExtended/Default/blob/main/src/DotNetExtended.NoReflection.Tests/ReflectionBenchmarkModels.cs)
+
+Note: I tried to use this logic in `System.Text.Json` but couldn't beat it though it was using reflection. It was highly optimized and I gave up.
