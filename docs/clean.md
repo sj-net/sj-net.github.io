@@ -74,8 +74,8 @@ function Remove-FoldersRecursively {
             'obj',             # build output
             '.vs',             # Visual Studio workspace
             '.idea',           # JetBrains IDE settings
-            '.vscode',         # VS Code settings
-            'dist',            # distribution/build output
+           # '.vscode',         # VS Code settings
+           # 'dist',            # distribution/build output
             'out',             # build output
             'coverage',        # test coverage reports
             'target',          # Maven/Gradle build output
